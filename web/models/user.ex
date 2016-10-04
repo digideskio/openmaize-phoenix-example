@@ -26,9 +26,6 @@ defmodule Welcome.User do
 
   @doc """
   Creates a changeset based on the `model` and `params`.
-
-  If `params` are nil, an invalid changeset is returned
-  with no validation performed.
   """
   def changeset(model, params \\ %{}) do
     model
