@@ -4,13 +4,17 @@ Example of using Openmaize authentication library in a Phoenix web application.
 
 ## Example apps
 
-The example on this branch is based on version 2.1 of Openmaize.
-It just shows an example of a new Phoenix app just after running the
-command `mix openmaize.gen.phoenixauth --confirm`. See
-[this guide](https://github.com/riverrun/openmaize/blob/master/phoenix_new_openmaize.md)
-for more information about setting up a new app with Openmaize.
+There are three branches in this repository, each of which has a different
+example of using Openmaize with Phoenix.
 
-There is also an example app on the `old_admin` branch, which is based
-on older versions (greater than 2.0) of Openmaize. This older version
-has more features, such as support for two-factor authentication and
-authorization based on user roles.
+* master - new Phoenix app after running `mix openmaize.gen.phoenixauth --confirm`
+  * this has basic user authentication plus email confirmation and password resetting
+  * to use this app, you need to edit the `lib/welcome/mailer.ex` file, using an email library of your choice
+* basic - new Phoenix app after running `mix openmaize.gen.phoenixauth`
+  * this has basic user authentication
+* old_admin - an older version, but one with more features
+  * support for two-factor user authorization
+  * authorization based on user roles
+
+See [this guide](https://github.com/riverrun/openmaize/blob/master/phoenix_new_openmaize.md)
+for more information about setting up a new app with Openmaize.
