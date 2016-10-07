@@ -63,17 +63,3 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
-
-#prod.secret.exs will have the following contents:
-#use Mix.Config
-
-# In this file, we keep production configuration that
-# you likely want to automate and keep it away from
-# your version control system.
-#config :welcome, Welcome.Endpoint,
-  #secret_key_base: secret_key
-
-# you can create the secret_key with the following function:
-#defp random_string(length) do
-  #:crypto.strong_rand_bytes(length) |> Base.encode64 |> binary_part(0, length)
-#end

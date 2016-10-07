@@ -10,10 +10,10 @@ config :welcome, Welcome.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  cache_static_lookup: false,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-             cd: Path.expand("../", __DIR__)]]
+                    cd: Path.expand("../", __DIR__)]]
+
 
 # Watch static and templates for browser reloading.
 config :welcome, Welcome.Endpoint,
@@ -29,9 +29,8 @@ config :welcome, Welcome.Endpoint,
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
-# Set a higher stacktrace during development.
-# Do not configure such in production as keeping
-# and calculating stacktraces is usually expensive.
+# Set a higher stacktrace during development. Avoid configuring such
+# in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
@@ -42,14 +41,3 @@ config :welcome, Welcome.Repo,
   database: "welcome_dev",
   hostname: "localhost",
   pool_size: 10
-
-# Openmaize authentication library configuration
-# For more information about configuration, see the documentation
-# for the Openmaize.Config module.
-config :openmaize,
-  remember_salt: "12345678"
-
-# Configure mailgun
-config :welcome,
-  mailgun_domain: System.get_env("MAILGUN_DOMAIN"),
-  mailgun_key:    System.get_env("MAILGUN_KEY")

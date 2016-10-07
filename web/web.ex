@@ -22,7 +22,7 @@ defmodule Welcome.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -32,7 +32,7 @@ defmodule Welcome.Web do
 
       alias Welcome.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import Welcome.Router.Helpers
       import Welcome.Gettext
@@ -65,10 +65,9 @@ defmodule Welcome.Web do
     quote do
       use Phoenix.Channel
 
-      # Alias the data repository and import query/model functions
       alias Welcome.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import Welcome.Gettext
     end
   end

@@ -17,12 +17,3 @@ config :welcome, Welcome.Repo,
   database: "welcome_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
-
-# Openmaize authentication library configuration
-# For more information about configuration, see the documentation
-# for the Openmaize.Config module.
-
-# Configure mailgun
-config :welcome,
-  mailgun_domain: System.get_env("MAILGUN_DOMAIN"),
-  mailgun_key:    System.get_env("MAILGUN_KEY")

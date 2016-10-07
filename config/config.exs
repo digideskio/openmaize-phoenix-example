@@ -5,16 +5,17 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :welcome,
+  ecto_repos: [Welcome.Repo]
+
 # Configures the endpoint
 config :welcome, Welcome.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
-  secret_key_base: "1d/i0nDCWrlOMKGZucNrFq3IAA6r7jweaPH/gwYCxDZJr6Z5K/Kdk4rebsZEsyBp",
-  render_errors: [accepts: ~w(html json)],
+  secret_key_base: "NWubAA15egYxOBxjxQnkfHvUFus7nEanYQNWq0O+NKA1J+NcrhovPv/fUBh3RdMk",
+  render_errors: [view: Welcome.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Welcome.PubSub,
            adapter: Phoenix.PubSub.PG2]
-
-config :welcome, ecto_repos: [Welcome.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,8 +25,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false

@@ -1,9 +1,9 @@
-defmodule Welcome.ConnCase do
+defmodule Welcome.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
-  tests that require setting up a connection.
+  channel tests.
 
-  Such tests rely on `Phoenix.ConnTest` and also
+  Such tests rely on `Phoenix.ChannelTest` and also
   import other functionality to make it easier
   to build and query models.
 
@@ -17,15 +17,14 @@ defmodule Welcome.ConnCase do
 
   using do
     quote do
-      # Import conveniences for testing with connections
-      use Phoenix.ConnTest
+      # Import conveniences for testing with channels
+      use Phoenix.ChannelTest
 
       alias Welcome.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Welcome.Router.Helpers
 
       # The default endpoint for testing
       @endpoint Welcome.Endpoint
@@ -39,6 +38,6 @@ defmodule Welcome.ConnCase do
       Ecto.Adapters.SQL.Sandbox.mode(Welcome.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    :ok
   end
 end

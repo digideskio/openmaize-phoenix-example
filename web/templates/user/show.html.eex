@@ -3,19 +3,21 @@
 <ul>
 
   <li>
-    <strong>Name:</strong>
+    <strong>Viewer:</strong>
+    <%= @current_user.username %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
     <%= @user.username %>
   </li>
 
   <li>
-    <strong>Biography:</strong>
-    <p><%= @user.bio %></p>
+    <strong>Email:</strong>
+    <%= @user.email %>
   </li>
 
 </ul>
 
-<%= if @current_user.id == @user.id do %>
 <%= link "Edit", to: user_path(@conn, :edit, @user) %>
-<%= else %>
 <%= link "Back", to: user_path(@conn, :index) %>
-<%= end %>

@@ -8,36 +8,17 @@ defmodule Welcome.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Openmaize.Authenticate
-    plug Openmaize.Remember
   end
 
   scope "/", Welcome do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/confirm", PageController, :confirm
-    get "/askreset", PageController, :askreset
-    post "/askreset", PageController, :askreset_password
-    get "/reset", PageController, :reset
-    post "/reset", PageController, :reset_password
-    get "/login", PageController, :login, as: :login
-    post "/login", PageController, :login_user, as: :login
-    get "/twofa", PageController, :twofa
-    post "/twofa", PageController, :login_twofa
-    delete "/logout", PageController, :logout, as: :logout
-  end
 
-  scope "/users", Welcome do
-    pipe_through :browser
-
-    resources "/", UserController, only: [:index, :show, :edit, :update]
-  end
-
-  scope "/admin", Welcome do
-    pipe_through :browser
-
-    get "/", AdminController, :index
-    resources "/users", AdminController, only: [:new, :create, :delete]
+    resources "/users", UserController
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    get "/sessions/confirm_email", SessionController, :confirm_email
+    resources "/password_resets", PasswordResetController, only: [:new, :create, :edit, :update]
   end
 
 end
