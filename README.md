@@ -1,16 +1,20 @@
 # Welcome
 
-Example of using Openmaize authentication library in a Phoenix web application.
+To start your Phoenix app:
 
-## Example apps
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+  * Install Node.js dependencies with `npm install`
+  * Start Phoenix endpoint with `mix phoenix.server`
 
-The example on this branch is based on version 2.1 of Openmaize.
-It just shows an example of a new Phoenix app just after running the
-command `mix openmaize.gen.phoenixauth --confirm`. See
-[this guide](https://github.com/riverrun/openmaize/blob/master/phoenix_new_openmaize.md)
-for more information about setting up a new app with Openmaize.
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-There is also an example app on the `old_admin` branch, which is based
-on older versions (greater than 2.0) of Openmaize. This older version
-has more features, such as support for two-factor authentication and
-authorization based on user roles.
+Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+
+## Learn more
+
+  * Official website: http://www.phoenixframework.org/
+  * Guides: http://phoenixframework.org/docs/overview
+  * Docs: https://hexdocs.pm/phoenix
+  * Mailing list: http://groups.google.com/group/phoenix-talk
+  * Source: https://github.com/phoenixframework/phoenix
