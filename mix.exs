@@ -36,7 +36,7 @@ defmodule Welcome.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:openmaize, git: "https://github.com/riverrun/openmaize.git"},
+     {:openmaize, "~> 2.1"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
   end
